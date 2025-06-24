@@ -31,6 +31,9 @@ const SolutionsSection = () => {
               الحل في نظام كامل يشتغل لصالحك
             </span>
           </h2>
+          <p className="text-xl text-gray-600 mt-8 max-w-4xl mx-auto leading-relaxed">
+            بعد تجربة طويلة مع عشرات المتاجر الالكترونية، طورنا نظاما متكامل لزيادة المبيعات واليوم نقدمه لك
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-16">

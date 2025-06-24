@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 const ProblemSection = () => {
   const painPoints = [
     "بتصرف آلاف الدولارات على إعلانات عشوائية ومفيش نتائج حقيقية",
-    "بتجيب ترافيك كتير لكن مفيش مبيعات، والموقع مش بيحوّل",
+    "بتجيب ترافيك كتير لكن مفيش مبيعات، و معدل التحويل قليل جدا",
     "مفيش خطة تسويق واضحة، بس تجارب وخساير",
     "كل شهر الوضع بيتغير ومفيش نمو ثابت"
   ];
@@ -14,9 +14,7 @@ const ProblemSection = () => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-8 leading-tight">
-            هل ميزانيتك الإعلانية تتحول إلى{" "}
-            <span className="text-red-600">خسائر</span>{" "}
-            بدون نتائج؟
+            هل تهدر ميزانيتك الإعلانية بدون تحقيق نتائج
           </h2>
         </div>
 

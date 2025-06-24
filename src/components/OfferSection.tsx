@@ -4,12 +4,12 @@ import { Button } from "@/components/ui/button";
 const OfferSection = () => {
   const deliverables = [
     {
-      title: "تحليل شامل لمتجرك ومنتجاتك",
+      title: "تحليل شامل لمتجرك ومنتجاتك و حساباتك الاعلانية",
       description: "نكتشف الثغرات ونقترح حلول فعلية"
     },
     {
       title: "إعادة تصميم وتحسين الفانل",
-      description: "نقفل كل تسريب من الإعلان لغاية الـ Checkout"
+      description: "نظبط الفانل من الألف للياء نقفل كل الثغرات اللي تضيع العملاء المحتملين، ونحوّل الزوار إلى عملاء"
     },
     {
       title: "إعلانات بداتا حقيقية",
@@ -26,13 +26,7 @@ const OfferSection = () => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-8 leading-tight">
-            <span className="text-lime bg-black px-4 py-2 rounded-lg inline-block">
-              Islam Ibrahim Agency
-            </span>
-            <br />
-            <span className="mt-4 inline-block">
-              هتساعدك تبني نظام تسويقي يضاعف مبيعاتك خلال 30 - 60 يوم
-            </span>
+            هتساعدك تبني نظام تسويقي يضاعف مبيعاتك خلال 30 - 60 يوم
           </h2>
         </div>
 
