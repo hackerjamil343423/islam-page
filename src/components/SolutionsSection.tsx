@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 
 const SolutionsSection = () => {
@@ -9,49 +8,39 @@ const SolutionsSection = () => {
       description: "مش تخمين. بنفهم العميل من أرقامه وسلوكياته."
     },
     {
-      icon: "🧭",
+      icon: "🧭", 
       title: "خطة تسويق مترابطة",
       description: "كل شيء شغال مع بعض: الإعلانات، المحتوى، الصفحات، التتبع."
     },
     {
       icon: "🛠️",
-      title: "تحسين مستمر",
+      title: "تحسين مستمر", 
       description: "كل مرحلة في الفانل بيتم مراقبتها وتحسينها أسبوعيًا."
     }
   ];
 
   return (
-    <section className="py-24 bg-cream">
+    <section className="py-12 md:py-16 lg:py-24 bg-cream">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-8 leading-tight">
-            الحل مش في إعلان جديد...{" "}
-            <br />
-            <span className="text-lime bg-black px-4 py-2 rounded-lg inline-block mt-4">
-              الحل في نظام كامل يشتغل لصالحك
-            </span>
+        <div className="text-center mb-8 md:mb-12 lg:mb-16">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-4 md:mb-6 leading-tight px-2">
+            الحل مش في إعلان جديد... الحل في نظام كامل يشتغل لصالحك
           </h2>
-          <p className="text-xl text-gray-600 mt-8 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed px-2">
             بعد تجربة طويلة مع عشرات المتاجر الالكترونية، طورنا نظاما متكامل لزيادة المبيعات واليوم نقدمه لك
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12 lg:mb-16">
           {solutions.map((solution, index) => (
             <div 
               key={index}
-              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-up border-2 border-transparent hover:border-lime"
+              className="bg-white p-6 md:p-8 rounded-xl shadow-lg border-2 border-lime text-center animate-fade-up hover:scale-105 transition-all duration-300"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className="text-6xl mb-6 text-center">
-                {solution.icon}
-              </div>
-              <h3 className="text-2xl font-bold text-black mb-4 text-center">
-                {solution.title}
-              </h3>
-              <p className="text-lg text-gray-700 leading-relaxed text-center">
-                {solution.description}
-              </p>
+              <div className="text-4xl md:text-5xl mb-4 md:mb-6">{solution.icon}</div>
+              <h3 className="text-lg md:text-xl font-bold text-black mb-3 md:mb-4">{solution.title}</h3>
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed">{solution.description}</p>
             </div>
           ))}
         </div>
@@ -59,7 +48,7 @@ const SolutionsSection = () => {
         <div className="text-center">
           <Button 
             size="lg" 
-            className="bg-lime text-black hover:bg-lime/90 text-xl px-12 py-6 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            className="bg-lime text-black hover:bg-lime/90 text-base md:text-lg lg:text-xl px-6 md:px-8 lg:px-12 py-4 md:py-5 lg:py-6 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 w-full sm:w-auto"
           >
             ابدأ ببناء نظام التسويق بتاعك دلوقتي
           </Button>

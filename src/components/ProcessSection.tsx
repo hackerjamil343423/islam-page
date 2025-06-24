@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 
 const ProcessSection = () => {
@@ -9,79 +8,43 @@ const ProcessSection = () => {
       description: "بنفحص الأداء، الفانل، الإعلانات، وتجربة العميل"
     },
     {
-      number: "2", 
-      title: "تحسين شامل للرحلة",
-      description: "من أول الإعلان لغاية الدفع – كل خطوة محسوبة ومعدّلة"
-    },
-    {
-      number: "3",
-      title: "إطلاق الحملات + قياس النتائج", 
+      number: "2",
+      title: "إطلاق الحملات + قياس النتائج",
       description: "بنطلق الحملات ونحلل كل شيء أسبوعيًا لتحقيق استقرار وربح ثابت"
     }
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-12 md:py-16 lg:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-8">
+        <div className="text-center mb-8 md:mb-12 lg:mb-16">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-4 md:mb-6 lg:mb-8 leading-tight px-2">
             إزاي هنشتغل سوا؟
           </h2>
         </div>
 
-        <div className="relative">
-          {/* Connection line */}
-          <div className="hidden md:block absolute top-16 left-1/2 w-0.5 h-96 bg-lime transform -translate-x-1/2"></div>
-          
+        <div className="space-y-6 md:space-y-8 mb-8 md:mb-12 lg:mb-16">
           {steps.map((step, index) => (
             <div 
               key={index}
-              className={`flex items-center gap-8 mb-16 animate-fade-up ${
-                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-              }`}
-              style={{ animationDelay: `${index * 0.3}s` }}
+              className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 p-6 md:p-8 bg-cream rounded-xl shadow-lg animate-fade-up"
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-lime rounded-full flex items-center justify-center flex-shrink-0">
+                <span className="text-lg md:text-xl font-bold text-black">{step.number}</span>
+              </div>
               <div className="flex-1">
-                <div className={`bg-white p-8 rounded-2xl shadow-lg border-2 border-lime ${
-                  index % 2 === 0 ? 'md:text-right' : 'md:text-left'
-                }`}>
-                  <h3 className="text-2xl font-bold text-black mb-4">
-                    {step.title}
-                  </h3>
-                  <p className="text-lg text-gray-700 leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex-shrink-0">
-                <div className="w-16 h-16 bg-lime rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-2xl font-bold text-black">
-                    {step.number}
-                  </span>
-                </div>
-              </div>
-              
-              <div className="flex-1 hidden md:block">
-                {index % 2 !== 0 && (
-                  <div className="bg-white p-8 rounded-2xl shadow-lg border-2 border-lime">
-                    <h3 className="text-2xl font-bold text-black mb-4">
-                      {step.title}
-                    </h3>
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
-                )}
+                <h3 className="text-lg md:text-xl font-bold text-black mb-2 md:mb-3">{step.title}</h3>
+                <p className="text-sm md:text-base text-gray-600 leading-relaxed">{step.description}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-16">
+        <div className="text-center">
           <Button 
             size="lg" 
-            className="bg-lime text-black hover:bg-lime/90 text-xl px-12 py-6 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            className="bg-lime text-black hover:bg-lime/90 text-base md:text-lg lg:text-xl px-6 md:px-8 lg:px-12 py-4 md:py-5 lg:py-6 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 w-full sm:w-auto"
           >
             ابدأ الرحلة دي مع فريق عنده خطة ونتائج
           </Button>
