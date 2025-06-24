@@ -25,15 +25,15 @@ const OfferSection = () => {
   ];
 
   return (
-    <section className="py-12 md:py-16 lg:py-24 bg-white">
+    <section className="py-12 md:py-16 lg:py-20 bg-white overflow-hidden">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-8 md:mb-12 lg:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-4 md:mb-6 lg:mb-8 leading-tight px-2">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-4 md:mb-6 leading-tight px-2">
             هنساعدك تبني نظام تسويقي يضاعف مبيعاتك خلال 30 - 60 يوم
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12 lg:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12">
           {deliverables.map((deliverable, index) => (
             <div 
               key={index}
@@ -52,7 +52,7 @@ const OfferSection = () => {
         <div className="text-center">
           <Button 
             size="lg" 
-            className="bg-lime text-black hover:bg-lime/90 text-base md:text-lg lg:text-xl px-6 md:px-8 lg:px-12 py-4 md:py-5 lg:py-6 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+            className="bg-lime text-black hover:bg-lime/90 text-base md:text-lg px-8 md:px-10 py-3 md:py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 w-full sm:w-auto max-w-lg mx-auto"
           >
             احجز استشارتك المجانية دلوقتي
           </Button>

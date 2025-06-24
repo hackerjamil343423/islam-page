@@ -22,15 +22,15 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-12 md:py-16 lg:py-24 bg-cream">
+    <section className="py-12 md:py-16 lg:py-20 bg-cream overflow-hidden">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-8 md:mb-12 lg:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-4 md:mb-6 lg:mb-8 leading-relaxed">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-4 md:mb-6 leading-relaxed">
             نتائج حقيقية من عملاء فعليين
           </h2>
         </div>
 
-        <div className="mb-8 md:mb-12 lg:mb-16">
+        <div className="mb-8 md:mb-12">
           <Carousel 
             className="w-full max-w-5xl mx-auto"
             opts={{
@@ -43,30 +43,35 @@ const TestimonialsSection = () => {
                 <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
                   <div className="animate-fade-up">
                     <div 
-                      className="bg-white rounded-xl overflow-hidden border-2 border-lime transition-all duration-300 hover:scale-105"
+                      className="bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 p-2"
                       style={{ 
-                        boxShadow: '0 10px 30px rgba(217, 252, 103, 0.3)' 
+                        boxShadow: '0 10px 30px rgba(217, 252, 103, 0.4)' 
                       }}
                     >
                       <img 
                         src={image} 
                         alt={`نتائج العميل ${index + 1}`}
-                        className="w-full h-auto object-contain"
+                        className="w-full h-auto object-contain rounded-xl"
+                        loading="lazy"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                        }}
                       />
                     </div>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="border-lime text-lime hover:bg-lime hover:text-black transition-colors duration-300" />
-            <CarouselNext className="border-lime text-lime hover:bg-lime hover:text-black transition-colors duration-300" />
+            <CarouselPrevious className="border-2 border-lime bg-white text-lime hover:bg-lime hover:text-black transition-all duration-300 shadow-lg -left-4 md:-left-12" />
+            <CarouselNext className="border-2 border-lime bg-white text-lime hover:bg-lime hover:text-black transition-all duration-300 shadow-lg -right-4 md:-right-12" />
           </Carousel>
         </div>
 
         <div className="text-center">
           <Button 
             size="lg" 
-            className="bg-lime text-black hover:bg-lime/90 text-base md:text-lg lg:text-xl px-6 md:px-8 lg:px-12 py-4 md:py-5 lg:py-6 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            className="bg-lime text-black hover:bg-lime/90 text-base md:text-lg px-8 md:px-10 py-3 md:py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 w-full sm:w-auto max-w-lg mx-auto"
           >
             عايز تكون أنت القصة الجاية؟ احجز دلوقتي
           </Button>
