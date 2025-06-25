@@ -64,10 +64,11 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				cream: '#faf9f6',
-				lime: '#d9fc67'
+				lime: '#d9fc67',
+				'lime-dark': '#c9e650' // Added darker lime color
 			},
 			fontFamily: {
-				'inter': ['Inter', 'sans-serif'],
+				'tajawal': ['Tajawal', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
