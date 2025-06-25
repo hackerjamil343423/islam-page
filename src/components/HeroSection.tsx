@@ -7,7 +7,7 @@ const HeroSection = () => {
       <div className="max-w-6xl mx-auto text-center w-full">
         {/* Eyebrow Text */}
         <div className="animate-fade-up mb-6 md:mb-8">
-          <div className="inline-block bg-gradient-to-r from-white/95 to-gray-50/95 backdrop-blur-sm px-4 md:px-6 lg:px-8 py-3 md:py-4 rounded-2xl transition-all duration-500 hover:shadow-2xl hover:scale-105 animate-fade-up border border-gray-100/50"
+          <div className="inline-block bg-gradient-to-r from-white/95 to-gray-50/95 backdrop-blur-sm px-4 md:px-6 lg:px-8 py-3 md:py-4 rounded-2xl transition-all duration-500 hover:shadow-2xl hover:scale-105 animate-scale-in border border-gray-100/50"
                style={{ 
                  boxShadow: '0 10px 30px rgba(217, 252, 103, 0.3), 0 0 0 1px rgba(217, 252, 103, 0.1)' 
                }}>
@@ -21,7 +21,7 @@ const HeroSection = () => {
         <div className="animate-fade-up-delay-2 mb-6 md:mb-8">
           <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-black mb-4 md:mb-6 leading-[2] px-2">
             ضاعف مبيعات متجرك خلال{" "}
-            <span className="text-lime-dark font-extrabold">
+            <span className="text-lime-dark font-extrabold bg-gradient-to-r from-lime-dark to-green-600 bg-clip-text text-transparent">
               60 يوم
             </span>
             <br className="hidden md:block" />
