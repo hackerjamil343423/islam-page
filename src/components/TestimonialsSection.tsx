@@ -1,149 +1,165 @@
 
 import { Button } from "@/components/ui/button";
-import { ImageCarousel } from "@/components/ui/image-carousel";
+import { useState } from "react";
 
 const TestimonialsSection = () => {
-  // Updated with Imgur direct image URLs
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+  // Testimonial result images
   const testimonialImages = [
-    "https://i.imgur.com/qOsPKJK.jpeg",
     "https://i.imgur.com/nROVylE.jpeg",
+    "https://i.imgur.com/qOsPKJK.jpeg",
     "https://i.imgur.com/LQKyycb.jpeg",
-    "https://i.imgur.com/4O2CW6t.jpeg",
-    "https://i.imgur.com/bvZOyBA.jpeg",
-    "https://i.imgur.com/PJFd3XG.jpeg",
+    "https://i.imgur.com/JWJEi6v.jpeg",
     "https://i.imgur.com/RkoiRKe.jpeg",
-    "https://i.imgur.com/JWJEi6v.jpeg"
+    "https://i.imgur.com/PJFd3XG.jpeg",
+    "https://i.imgur.com/bvZOyBA.jpeg",
+    "https://i.imgur.com/4O2CW6t.jpeg"
   ];
 
   const stats = [
-    { number: "200+", label: "متجر نجح معنا", icon: "🏪" },
-    { number: "300%", label: "متوسط زيادة المبيعات", icon: "📈" },
-    { number: "60", label: "يوم لرؤية النتائج", icon: "⏰" },
-    { number: "95%", label: "معدل رضا العملاء", icon: "⭐" }
+    { number: "200+", label: "متجر نجح معنا" },
+    { number: "300%", label: "متوسط زيادة المبيعات" },
+    { number: "60", label: "يوم لرؤية النتائج" },
+    { number: "95%", label: "معدل رضا العملاء" }
   ];
 
   return (
-    <section className="py-16 md:py-20 lg:py-28 bg-gradient-to-br from-cream via-white to-cream overflow-hidden relative">
-      {/* Background decorative elements */}
-      <div className="absolute top-16 left-12 w-28 h-28 bg-green-200/20 rounded-full blur-2xl animate-pulse"></div>
-      <div className="absolute bottom-20 right-16 w-36 h-36 bg-lime/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
-      <div className="absolute top-1/2 left-1/3 w-20 h-20 bg-lime-dark/10 rounded-full blur-xl animate-pulse delay-500"></div>
-      
-      <div className="max-w-7xl mx-auto px-4 relative z-10">
+    <section className="py-12 md:py-16 section-bg">
+      <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16 lg:mb-20">
-          <div className="inline-block glass-morphism px-6 py-3 rounded-2xl mb-6 shadow-premium animate-bounceIn">
-            <span className="text-green-600 font-semibold text-sm md:text-base">✅ نتائج مثبتة</span>
+        <div className="text-center mb-16 md:mb-20">
+          <div className="inline-flex items-center gap-3 enterprise-card px-6 py-3 text-sm font-medium text-muted-foreground mb-8">
+            <div className="w-2 h-2 bg-primary rounded-full"></div>
+            نتائج مثبتة
           </div>
-          
-          <div className="iphone-container max-w-5xl mx-auto p-8 md:p-12 lg:p-16 mb-8">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black leading-tight">
-              <span className="block mb-4">نتائج</span>
-              <span className="text-green-600 bg-gradient-to-r from-green-600 via-lime-dark to-green-500 bg-clip-text text-transparent font-extrabold">
-                حقيقية
-              </span>
-              <span className="block mt-2">من عملاء فعليين</span>
-            </h2>
-          </div>
-          
-          <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-lime-dark mx-auto rounded-full"></div>
+
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
+            نتائج <span className="text-primary">حقيقية</span> من عملاء فعليين
+          </h2>
+
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            صور حقيقية لنتائج عملائنا - مش مجرد كلام
+          </p>
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10 mb-12 md:mb-16 lg:mb-20">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {stats.map((stat, index) => (
-            <div 
-              key={index}
-              className="group text-center bg-white p-6 md:p-8 lg:p-10 rounded-3xl shadow-premium hover:shadow-glow border border-gray-100 animate-fade-up hover-lift transition-all duration-500"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="text-3xl md:text-4xl lg:text-5xl mb-4 group-hover:animate-bounce">{stat.icon}</div>
-              <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-lime-dark mb-2 group-hover:scale-110 transition-transform duration-300">
+            <div key={index} className="enterprise-card p-8 text-center hover:border-primary/30 transition-all duration-300 shadow-deep hover:shadow-elevated">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
                 {stat.number}
               </div>
-              <div className="text-sm md:text-base lg:text-lg text-gray-600 font-medium">{stat.label}</div>
+              <div className="text-sm text-muted-foreground font-medium">{stat.label}</div>
             </div>
           ))}
         </div>
 
         {/* Testimonials Carousel */}
-        <div className="mb-12 md:mb-16 lg:mb-20">
-          <div className="glass-morphism p-6 md:p-8 lg:p-10 rounded-3xl shadow-premium">
-            <div className="text-center mb-6 md:mb-8">
-              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-4">
+        <div className="mb-20">
+          <div className="enterprise-card p-8 shadow-elevated">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-semibold text-foreground mb-4">
                 شوف بنفسك النتائج اللي حققناها
               </h3>
-              <p className="text-base md:text-lg text-gray-600 font-medium">
-                صور حقيقية لنتائج عملائنا - مش مجرد كلام
-              </p>
             </div>
-            
-            <div className="animate-fade-up-delay-2 relative">
-              <ImageCarousel 
-                images={testimonialImages}
-                className="max-w-6xl mx-auto"
-              />
-              
-              {/* Floating trust indicators */}
-              <div className="absolute -top-4 -right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold animate-bounce">
+
+            <div className="relative">
+              {/* Image Grid */}
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+                {testimonialImages.map((image, index) => (
+                  <div
+                    key={index}
+                    className="relative overflow-hidden rounded-lg shadow-deep hover:shadow-elevated transition-all duration-300 cursor-pointer group"
+                    onClick={() => setLightboxImage(image)}
+                  >
+                    <img
+                      src={image}
+                      alt={`نتيجة العميل ${index + 1}`}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-primary text-primary-foreground px-3 py-1 rounded text-sm font-medium">
+                        اضغط للتكبير
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Professional trust indicators */}
+              <div className="absolute -top-3 -right-3 bg-primary text-primary-foreground px-3 py-1 rounded text-xs font-medium">
                 نتائج حقيقية
               </div>
-              <div className="absolute -bottom-4 -left-4 bg-lime-dark text-black px-3 py-1 rounded-full text-sm font-semibold animate-bounce delay-500">
+              <div className="absolute -bottom-3 -left-3 bg-card border border-border text-foreground px-3 py-1 rounded text-xs font-medium">
                 مثبتة 100%
               </div>
             </div>
           </div>
         </div>
 
-        {/* Enhanced CTA Section */}
+        {/* CTA Section */}
         <div className="text-center">
-          <div className="glass-morphism max-w-4xl mx-auto p-8 md:p-12 lg:p-16 rounded-3xl shadow-premium relative overflow-hidden">
-            {/* Animated background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 via-transparent to-lime/10 animate-shimmer"></div>
-            
-            <div className="relative z-10">
-              <div className="flex items-center justify-center gap-4 mb-6 md:mb-8">
-                <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center animate-pulse">
-                  <span className="text-white text-xl">🎯</span>
-                </div>
-                <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-black">
-                  عايز تكون أنت القصة الجاية؟
-                </h3>
-                <div className="w-12 h-12 bg-lime-dark rounded-full flex items-center justify-center animate-pulse delay-300">
-                  <span className="text-black text-xl">🚀</span>
-                </div>
+          <div className="enterprise-card max-w-4xl mx-auto p-12">
+            <h3 className="text-3xl font-bold text-foreground mb-6">
+              عايز تكون أنت القصة الجاية؟
+            </h3>
+
+            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+              انضم لمئات العملاء اللي حققوا نتائج مذهلة معنا
+            </p>
+
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-semibold px-8 py-4 rounded-lg mb-8"
+            >
+              تواصل معنا الان
+            </Button>
+
+            {/* Trust indicators */}
+            <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
+                استشارة مجانية 100%
               </div>
-              
-              <p className="text-lg md:text-xl text-gray-600 mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
-                انضم لمئات العملاء اللي حققوا نتائج مذهلة معنا
-              </p>
-              
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-green-500 to-lime-dark text-white hover:from-green-600 hover:to-lime text-lg md:text-xl lg:text-2xl px-12 md:px-16 lg:px-20 py-4 md:py-6 lg:py-8 rounded-full font-bold shadow-premium hover:shadow-glow transition-all duration-500 hover:scale-110 hover-lift w-full sm:w-auto max-w-2xl mx-auto transform"
-              >
-                احجز استشارتك المجانية واحقق نتائج مماثلة 🏆
-              </Button>
-              
-              {/* Trust indicators */}
-              <div className="flex flex-wrap justify-center items-center gap-6 mt-8 text-sm md:text-base text-gray-600">
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                  استشارة مجانية 100%
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-lime-dark rounded-full"></span>
-                  بدون التزامات
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                  نتائج مضمونة
-                </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
+                بدون التزامات
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
+                نتائج مضمونة
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {lightboxImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
+          onClick={() => setLightboxImage(null)}
+        >
+          <div className="relative max-w-7xl max-h-full">
+            {/* Close button */}
+            <button
+              onClick={() => setLightboxImage(null)}
+              className="absolute -top-12 right-0 text-white hover:text-primary transition-colors duration-200 text-xl font-bold z-10"
+            >
+              ✕ إغلاق
+            </button>
+
+            {/* Image */}
+            <img
+              src={lightboxImage}
+              alt="نتيجة العميل"
+              className="max-w-full max-h-full object-contain rounded-lg shadow-intense"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };

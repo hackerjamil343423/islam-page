@@ -55,7 +55,7 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, className 
         {/* Previous Button */}
         <button
           onClick={goToPrev}
-          className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-lime bg-white text-lime hover:bg-lime hover:text-black transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center z-10"
+          className="flex-shrink-0 w-10 h-10 rounded border border-border bg-card text-foreground hover:bg-muted transition-colors duration-200 flex items-center justify-center z-10"
           disabled={isTransitioning}
         >
           <ArrowRight className="h-4 w-4 md:h-5 md:w-5" />
@@ -74,16 +74,11 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, className 
                 key={`${item.index}-${idx}`}
                 className="flex-1 min-w-0"
               >
-                <div 
-                  className="bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 p-2"
-                  style={{ 
-                    boxShadow: '0 10px 30px rgba(217, 252, 103, 0.4)' 
-                  }}
-                >
-                  <img 
+                <div className="bg-card rounded-lg overflow-hidden border border-border p-2 hover:border-primary/30 transition-colors duration-200">
+                  <img
                     src={item.src}
                     alt={`نتائج العميل ${item.index + 1}`}
-                    className="w-full h-auto object-contain rounded-xl max-h-96"
+                    className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover rounded-md"
                     loading="lazy"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
@@ -99,7 +94,7 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, className 
         {/* Next Button */}
         <button
           onClick={goToNext}
-          className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-lime bg-white text-lime hover:bg-lime hover:text-black transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center z-10"
+          className="flex-shrink-0 w-10 h-10 rounded border border-border bg-card text-foreground hover:bg-muted transition-colors duration-200 flex items-center justify-center z-10"
           disabled={isTransitioning}
         >
           <ArrowLeft className="h-4 w-4 md:h-5 md:w-5" />
@@ -121,8 +116,8 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, className 
               }
             }}
             className={cn(
-              "w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300",
-              index === currentIndex ? "bg-lime scale-125" : "bg-gray-300 hover:bg-gray-400"
+              "w-2 h-2 rounded-full transition-colors duration-200",
+              index === currentIndex ? "bg-primary" : "bg-muted hover:bg-muted-foreground"
             )}
           />
         ))}

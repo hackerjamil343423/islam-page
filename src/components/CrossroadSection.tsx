@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const CrossroadSection = () => {
   return (
-    <section className="py-16 md:py-20 lg:py-28 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden relative">
+    <section className="py-12 md:py-16 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden relative">
       {/* Background decorative elements */}
       <div className="absolute top-20 left-16 w-32 h-32 bg-red-500/10 rounded-full blur-2xl animate-pulse"></div>
       <div className="absolute bottom-24 right-20 w-36 h-36 bg-lime/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
@@ -12,25 +12,17 @@ const CrossroadSection = () => {
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
-          <div className="inline-block glass-morphism px-6 py-3 rounded-2xl mb-6 shadow-premium animate-bounceIn backdrop-blur-sm bg-white/10">
-            <span className="text-lime font-semibold text-sm md:text-base">⚡ لحظة الحسم</span>
+          <div className="inline-flex items-center gap-3 enterprise-card px-6 py-3 text-sm font-medium text-muted-foreground mb-8">
+            <div className="w-2 h-2 bg-primary rounded-full"></div>
+            لحظة الحسم
           </div>
           
-          <div className="iphone-container max-w-5xl mx-auto p-8 md:p-12 lg:p-16 mb-8 bg-gradient-to-br from-white/5 to-white/10">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
-              <span className="block mb-4">عندك</span>
-              <span className="text-lime bg-gradient-to-r from-lime via-yellow-400 to-lime bg-clip-text text-transparent font-extrabold">
-                طريقين...
-              </span>
-            </h2>
-            <div className="mt-6 md:mt-8">
-              <p className="text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed font-medium">
-                اختار مسارك بحكمة - مستقبل متجرك في يدك
-              </p>
-            </div>
-          </div>
-          
-          <div className="w-24 h-1 bg-gradient-to-r from-red-500 via-yellow-400 to-lime mx-auto rounded-full"></div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
+            عندك <span className="text-primary">طريقين...</span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            اختار مسارك بحكمة - مستقبل متجرك في يدك
+          </p>
         </div>
 
         {/* Paths Comparison */}
@@ -47,19 +39,18 @@ const CrossroadSection = () => {
             
             <div className="text-center relative z-10">
               {/* Icon */}
-              <div className="flex items-center justify-center gap-4 mb-6 md:mb-8">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center shadow-premium group-hover:shadow-glow group-hover:scale-110 transition-all duration-500">
-                  <span className="text-white text-2xl md:text-3xl font-bold">✗</span>
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-2xl font-bold">×</span>
                 </div>
-                <div className="text-4xl md:text-5xl lg:text-6xl group-hover:animate-bounce">😞</div>
               </div>
               
-              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-red-400 mb-6 md:mb-8">
+              <h3 className="text-2xl font-bold text-red-400 mb-6">
                 الطريق الأول
               </h3>
               
               <div className="space-y-4 mb-8">
-                <p className="text-base md:text-lg lg:text-xl leading-relaxed text-red-200 font-medium">
+                <p className="text-lg text-red-200">
                   إما تكمّل زي ما أنت، وتصرف فلوس أكتر كل شهر بدون نتائج
                 </p>
                 
@@ -97,19 +88,18 @@ const CrossroadSection = () => {
             
             <div className="text-center relative z-10">
               {/* Icon */}
-              <div className="flex items-center justify-center gap-4 mb-6 md:mb-8">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-lime to-green-500 rounded-full flex items-center justify-center shadow-premium group-hover:shadow-glow group-hover:scale-110 transition-all duration-500">
-                  <span className="text-black text-2xl md:text-3xl font-bold">✓</span>
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
+                  <span className="text-primary-foreground text-2xl font-bold">✓</span>
                 </div>
-                <div className="text-4xl md:text-5xl lg:text-6xl group-hover:animate-bounce">🚀</div>
               </div>
               
-              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-lime mb-6 md:mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-6">
                 الطريق الثاني
               </h3>
               
               <div className="space-y-4 mb-8">
-                <p className="text-base md:text-lg lg:text-xl leading-relaxed text-lime-200 font-medium">
+                <p className="text-lg text-muted-foreground">
                   أو تبدأ دلوقتي تبني نظام تسويق بيشتغل لصالحك، ويحققلك نمو حقيقي ومستقر
                 </p>
                 
@@ -138,50 +128,36 @@ const CrossroadSection = () => {
 
         {/* Enhanced CTA Section */}
         <div className="text-center">
-          <div className="glass-morphism max-w-5xl mx-auto p-8 md:p-12 lg:p-16 rounded-3xl shadow-premium relative overflow-hidden backdrop-blur-sm bg-white/10">
-            {/* Animated background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-lime/20 via-transparent to-lime/20 animate-shimmer"></div>
-            
-            <div className="relative z-10">
-              <div className="flex items-center justify-center gap-4 mb-6 md:mb-8">
-                <div className="w-16 h-16 bg-gradient-to-r from-lime to-green-500 rounded-full flex items-center justify-center animate-pulse shadow-premium">
-                  <span className="text-black text-2xl">⚡</span>
-                </div>
-                <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white">
-                  الوقت ينفد... اختار الآن
-                </h3>
-                <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-lime rounded-full flex items-center justify-center animate-pulse delay-300 shadow-premium">
-                  <span className="text-black text-2xl">🏆</span>
-                </div>
-              </div>
+          <div className="enterprise-card max-w-4xl mx-auto p-12">
+              <h3 className="text-3xl font-bold text-foreground mb-6">
+                الوقت ينفد... اختار الآن
+              </h3>
               
-              <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed font-medium">
+              <p className="text-xl text-muted-foreground mb-10 max-w-3xl mx-auto">
                 كل يوم تتأخر فيه... منافسك بيتقدم عليك خطوة
               </p>
               
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-lime to-green-500 text-black hover:from-green-500 hover:to-lime text-lg md:text-xl lg:text-2xl px-12 md:px-16 lg:px-20 py-4 md:py-6 lg:py-8 rounded-full font-bold shadow-premium hover:shadow-glow transition-all duration-500 hover:scale-110 hover-lift w-full sm:w-auto max-w-2xl mx-auto transform"
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-semibold px-8 py-4 rounded-lg"
               >
-                احجز استشارتك المجانية الآن ⚡
+                تواصل معنا الان
               </Button>
               
-              {/* Urgency indicators */}
-              <div className="flex flex-wrap justify-center items-center gap-6 mt-8 text-sm md:text-base text-gray-400">
+              <div className="flex flex-wrap justify-center items-center gap-8 mt-8 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-lime rounded-full animate-ping"></span>
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
                   مقاعد محدودة
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full animate-ping delay-100"></span>
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
                   استشارة مجانية 100%
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-lime rounded-full animate-ping delay-200"></span>
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
                   لا تضيع الفرصة
                 </div>
               </div>
-            </div>
           </div>
         </div>
       </div>
