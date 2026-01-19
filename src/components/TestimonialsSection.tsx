@@ -1,10 +1,12 @@
 
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { X, ChevronLeft, ChevronRight, Download } from "lucide-react";
 
 const TestimonialsSection = () => {
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
   const [showAll, setShowAll] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   // Testimonial result images - Fixed paths with correct spacing
   const testimonialImages = [
@@ -31,6 +33,34 @@ const TestimonialsSection = () => {
     { number: "60", label: "يوم لرؤية النتائج" },
     { number: "95%", label: "معدل رضا العملاء" }
   ];
+
+  const openLightbox = (image: string) => {
+    const index = testimonialImages.indexOf(image);
+    setCurrentIndex(index);
+    setLightboxImage(image);
+  };
+
+  const goToPrevious = () => {
+    const newIndex = currentIndex > 0 ? currentIndex - 1 : testimonialImages.length - 1;
+    setCurrentIndex(newIndex);
+    setLightboxImage(testimonialImages[newIndex]);
+  };
+
+  const goToNext = () => {
+    const newIndex = currentIndex < testimonialImages.length - 1 ? currentIndex + 1 : 0;
+    setCurrentIndex(newIndex);
+    setLightboxImage(testimonialImages[newIndex]);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Escape") {
+      setLightboxImage(null);
+    } else if (e.key === "ArrowLeft") {
+      goToPrevious();
+    } else if (e.key === "ArrowRight") {
+      goToNext();
+    }
+  };
 
   return (
     <section className="py-12 md:py-16 section-bg scroll-mt-24">
@@ -75,19 +105,24 @@ const TestimonialsSection = () => {
           {displayedImages.map((image, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
-              onClick={() => setLightboxImage(image)}
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer bg-card border border-border/50"
+              onClick={() => openLightbox(image)}
             >
-              <img
-                src={image}
-                alt={`نتيجة العميل ${index + 1}`}
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={image}
+                  alt={`نتيجة العميل ${index + 1}`}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <div className="bg-primary/90 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  اضغط للتكبير
+                <div className="bg-primary/90 backdrop-blur-sm text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 flex items-center gap-2">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0014 0z" />
+                  </svg>
+                  <span>اضغط للتكبير</span>
                 </div>
               </div>
             </div>
@@ -131,28 +166,78 @@ const TestimonialsSection = () => {
         </div>
       </div>
 
-      {/* Lightbox Modal */}
+      {/* Modern Lightbox Modal */}
       {lightboxImage && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center p-2 md:p-4 bg-black/95 backdrop-blur-md animate-in fade-in"
           onClick={() => setLightboxImage(null)}
+          onKeyDown={handleKeyDown}
+          tabIndex={0}
         >
-          <div className="relative max-w-7xl max-h-full">
-            {/* Close button */}
+          {/* Header */}
+          <div className="absolute top-0 left-0 right-0 flex items-center justify-between p-4 md:p-6 z-10">
+            <div className="text-white/80 text-sm font-medium">
+              نتيجة {currentIndex + 1} من {testimonialImages.length}
+            </div>
             <button
               onClick={() => setLightboxImage(null)}
-              className="absolute -top-12 right-0 text-white hover:text-primary transition-colors duration-200 text-xl font-bold z-10"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-all duration-200"
+              aria-label="إغلاق"
             >
-              ✕ إغلاق
+              <X className="w-5 h-5 md:w-6 md:h-6" />
             </button>
+          </div>
 
-            {/* Image */}
+          {/* Navigation */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              goToPrevious();
+            }}
+            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-all duration-200 hover:scale-110 z-10"
+            aria-label="الصورة السابقة"
+          >
+            <ChevronRight className="w-6 h-6 md:w-7 md:h-7 rotate-180" />
+          </button>
+
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              goToNext();
+            }}
+            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-all duration-200 hover:scale-110 z-10"
+            aria-label="الصورة التالية"
+          >
+            <ChevronRight className="w-6 h-6 md:w-7 md:h-7" />
+          </button>
+
+          {/* Image Container */}
+          <div
+            className="relative max-w-6xl w-full mx-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
             <img
               src={lightboxImage}
               alt="نتيجة العميل"
-              className="max-w-full max-h-full object-contain rounded-lg shadow-intense"
-              onClick={(e) => e.stopPropagation()}
+              className="w-full max-h-[70vh] md:max-h-[80vh] object-contain rounded-2xl shadow-2xl"
             />
+
+            {/* Download button */}
+            <a
+              href={lightboxImage}
+              download
+              className="absolute bottom-4 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-all duration-200 hover:scale-110"
+              aria-label="تحميل الصورة"
+            >
+              <Download className="w-5 h-5" />
+            </a>
+          </div>
+
+          {/* Footer hint */}
+          <div className="absolute bottom-4 left-0 right-0 text-center">
+            <p className="text-white/50 text-xs md:text-sm">
+              اضغط خارج الصورة أو Escape للإغلاق • استخدم الأسهم للتنقل
+            </p>
           </div>
         </div>
       )}
