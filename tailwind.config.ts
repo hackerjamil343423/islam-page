@@ -26,8 +26,8 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: '#d9fc67',
-					foreground: '#000000'
+					DEFAULT: '#00524D',
+					foreground: '#F7F6F2'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -42,8 +42,8 @@ export default {
 					foreground: 'hsl(var(--muted-foreground))'
 				},
 				accent: {
-					DEFAULT: '#d9fc67',
-					foreground: '#000000'
+					DEFAULT: '#48C78E',
+					foreground: '#1f1f1f'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -63,9 +63,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				cream: '#faf9f6',
-				lime: '#d9fc67',
-				'lime-dark': '#c9e650' // Added darker lime color
+				cream: '#F7F6F2',
+				teal: '#00524D',
+				'teal-dark': '#003d39',
+				mint: '#48C78E',
+				'mint-light': '#6dd9a5'
 			},
 			fontFamily: {
 				'tajawal': ['Tajawal', 'sans-serif'],

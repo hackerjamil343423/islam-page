@@ -22,10 +22,6 @@ const FAQSection = () => {
       answer: "هتوصلك تقارير مفصلة كل أسبوع فيها كل الأرقام والتحليلات، وهيكون عندك مكالمة أسبوعية مع مدير الحساب بتاعك عشان نتناقش في النتائج والخطة الجاية."
     },
     {
-      question: "هل الخدمة تشمل تصميم صفحات الهبوط؟",
-      answer: "أكيد، إحنا بنصمم ونحسن كل صفحات الهبوط، صفحات المنتجات، وصفحة الـ Checkout عشان نضمن أعلى معدل تحويل ممكن."
-    },
-    {
       question: "هل لازم يكون عندي تيم داخلي؟",
       answer: "مش شرط خالص. إحنا بنتولى كل شيء من الألف للياء، بس لو عندك تيم داخلي هنشتغل معاهم ونقوم بتدريبهم على النظام."
     },
@@ -40,7 +36,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="py-12 md:py-16 section-bg">
+    <section className="py-12 md:py-16 section-bg scroll-mt-24">
       
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         {/* Section Header */}
@@ -86,37 +82,20 @@ const FAQSection = () => {
 
         {/* Enhanced CTA Section */}
         <div className="text-center mt-20">
-          <div className="enterprise-card max-w-4xl mx-auto p-12">
-              <h3 className="text-3xl font-bold text-foreground mb-6">
-                لسه عندك أسئلة؟
-              </h3>
-              
-              <p className="text-xl text-muted-foreground mb-10 max-w-3xl mx-auto">
-                احجز استشارة مجانية واسأل كل اللي عايز تعرفه
-              </p>
-              
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-semibold px-8 py-4 rounded-lg"
-              >
-                تواصل معنا الان
-              </Button>
-              
-              <div className="flex flex-wrap justify-center items-center gap-8 mt-8 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  مكالمة مجانية 30 دقيقة
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  بدون التزامات
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  إجابات شافية لكل أسئلتك
-                </div>
-              </div>
-          </div>
+          <h3 className="text-3xl font-bold text-foreground mb-6">
+            لسه عندك أسئلة؟
+          </h3>
+
+          <p className="text-xl text-muted-foreground mb-10 max-w-3xl mx-auto">
+            احجز استشارة مجانية واسأل كل اللي عايز تعرفه
+          </p>
+
+          <Button
+            size="lg"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-semibold px-8 py-4 rounded-full"
+          >
+            تواصل معنا الان
+          </Button>
         </div>
       </div>
     </section>

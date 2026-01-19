@@ -1,4 +1,5 @@
 
+import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ProblemSection from "@/components/ProblemSection";
 import SolutionsSection from "@/components/SolutionsSection";
@@ -14,19 +15,30 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 const Index = () => {
   return (
     <div className="min-h-screen scroll-smooth relative overflow-hidden bg-background">
-      
-      <div className="relative z-10">
+      <Header />
+
+      <div className="relative z-10 pt-20">
         <HeroSection />
         <div className="space-y-24 md:space-y-32">
-          <ProblemSection />
-          <SolutionsSection />
-          <OfferSection />
+          <div id="problem">
+            <ProblemSection />
+          </div>
+          <div id="solutions">
+            <SolutionsSection />
+          </div>
+          <div id="offer">
+            <OfferSection />
+          </div>
           <BenefitsSection />
           <ProcessSection />
-          <TestimonialsSection />
+          <div id="testimonials">
+            <TestimonialsSection />
+          </div>
           <VisionSection />
           <CrossroadSection />
-          <FAQSection />
+          <div id="faq">
+            <FAQSection />
+          </div>
         </div>
       </div>
       <WhatsAppButton />

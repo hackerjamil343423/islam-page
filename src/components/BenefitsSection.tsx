@@ -18,15 +18,15 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <section className="py-12 md:py-16 section-bg">
+    <section className="py-12 md:py-16 section-bg scroll-mt-24">
       
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
-          <div className="inline-flex items-center gap-3 enterprise-card px-6 py-3 text-sm font-medium text-muted-foreground mb-8">
+          <span className="inline-flex items-center gap-3 px-6 py-3 bg-primary/10 border border-primary/20 rounded-full text-sm font-medium text-foreground mb-8">
             <div className="w-2 h-2 bg-primary rounded-full"></div>
             مميزاتنا الحصرية
-          </div>
+          </span>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
             ليه <span className="text-primary">تختارنا؟</span>
@@ -52,22 +52,20 @@ const BenefitsSection = () => {
 
         {/* Enhanced CTA Section */}
         <div className="text-center">
-          <div className="enterprise-card max-w-4xl mx-auto p-12">
-            <h3 className="text-3xl font-bold text-foreground mb-6">
-              عايز تبدأ تربح بدل ما تخسر؟
-            </h3>
+          <h3 className="text-3xl font-bold text-foreground mb-6">
+            عايز تبدأ تربح بدل ما تخسر؟
+          </h3>
 
-            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-              انضم لأكثر من 200+ متجر نجحوا في مضاعفة مبيعاتهم معنا
-            </p>
-              
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-semibold px-8 py-4 rounded-lg"
-              >
-                تواصل معنا الان
-              </Button>
-          </div>
+          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+            انضم لأكثر من 200+ متجر نجحوا في مضاعفة مبيعاتهم معنا
+          </p>
+
+          <Button
+            size="lg"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-semibold px-8 py-4 rounded-full"
+          >
+            تواصل معنا الان
+          </Button>
         </div>
       </div>
     </section>
