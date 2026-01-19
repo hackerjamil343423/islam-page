@@ -17,7 +17,7 @@ const Index = () => {
     <div className="min-h-screen scroll-smooth relative overflow-hidden bg-background">
       <Header />
 
-      <div className="relative z-10 pt-20">
+      <div className="relative z-10 pt-16 md:pt-20">
         <HeroSection />
         <div className="space-y-24 md:space-y-32">
           <div id="problem">
